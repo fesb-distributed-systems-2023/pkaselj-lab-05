@@ -34,5 +34,13 @@ namespace HttpProgramming.WebApiParameters.Controllers
             return Ok($"Hello, {name} from body!");
         }
 
+        [HttpGet]
+        [Route("/data/from-header")]
+        public IActionResult GetDataFromHeader()
+        {
+            string name = Request.Headers["X-Name"];
+            return Ok($"Hello, {name} from header!");
+        }
+
     }
 }
